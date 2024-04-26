@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>エストニア語の学習ツール</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #estonianWord, #englishWord {
+            font-size: 100px;
+            cursor: pointer;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <input type="file" id="fileInput" accept=".xlsx, .xls" onchange="loadExcelFile(event)" />
+    <div id="startButtons">
+        <button onclick="startTest()">単語テストを行う</button>
+        <button onclick="showWordList()">単語一覧を表示する</button>
+    </div>
+    <div id="estonianWord"></div>
+    <div id="englishWord"></div>
+    <table id="wordList" style="display:none;">
+        <tr>
+            <th>エストニア語</th>
+            <th>英語</th>
+        </tr>
+    </table>
+    <button id="resetButton" onclick="resetToStartScreen()" style="display:none;">最初の画面に戻る</button>
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
